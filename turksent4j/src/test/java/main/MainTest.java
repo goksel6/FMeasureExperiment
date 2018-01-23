@@ -21,7 +21,7 @@ public class MainTest {
 		POSTaggerME tagger = new POSTaggerME(model);
 
 		String sent[] = new String[] { "Most", "large", "cities", " ", "the", "US", "had", "morning", "and",
-				"afternoon", "newspapers", ".", null, null };
+				"afternoon", "newspapers", ".",null,null };
 		String tags[] = tagger.tag(sent);
 
 		for (int i = 0; i < tags.length; i++) {
