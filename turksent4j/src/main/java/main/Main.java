@@ -1,6 +1,7 @@
 package main;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -28,26 +29,26 @@ public class Main {
 //		}
 		// neg
 		System.out.println("File 1");
-		readFile("C:\\Users\\MONSTER\\Desktop\\neg\\cv000_29416.txt");
+		readFile("src/main/resources/neg/cv000_29416.txt");
 		System.out.println("File 2");
-		readFile("C:\\Users\\MONSTER\\Desktop\\neg\\cv001_19502.txt");
+		readFile("src/main/resources/neg/cv001_19502.txt");
 		System.out.println("File 3");
-		readFile("C:\\Users\\MONSTER\\Desktop\\neg\\cv002_17424.txt");
+		readFile("src/main/resources/neg/cv002_17424.txt");
 		System.out.println("File 4");
-		readFile("C:\\Users\\MONSTER\\Desktop\\neg\\cv003_12683.txt");
+		readFile("src/main/resources/neg/cv003_12683.txt");
 		System.out.println("File 5");
-		readFile("C:\\Users\\MONSTER\\Desktop\\neg\\cv004_12641.txt");
+		readFile("src/main/resources/neg/cv004_12641.txt");
 		// pos
 		System.out.println("pos 1-----------------------------");
-		readFile("C:\\Users\\MONSTER\\Desktop\\pos\\cv000_29590.txt");
+		readFile("src/main/resources/pos/cv000_29590.txt");
 		System.out.println("pos 2--------------------------------");
-		readFile("C:\\Users\\MONSTER\\Desktop\\pos\\cv001_18431.txt");
+		readFile("src/main/resources/pos/cv001_18431.txt");
 		System.out.println("pos 3----------------------------------");
-		readFile("C:\\Users\\MONSTER\\Desktop\\pos\\cv002_15918.txt");
+		readFile("src/main/resources/pos/cv002_15918.txt");
 		System.out.println("pos 4-----------------------");
-		readFile("C:\\Users\\MONSTER\\Desktop\\pos\\cv003_11664.txt");
+		readFile("src/main/resources/pos/cv003_11664.txt");
 		System.out.println("pos 5-----------------------------");
-		readFile("C:\\Users\\MONSTER\\Desktop\\pos\\cv004_11636.txt");
+		readFile("src/main/resources/pos/cv004_11636.txt");
 
 		for (int i = 0; i < 2; i++) {
 			for (int m = 0; m < 5; m++) {
@@ -57,16 +58,16 @@ public class Main {
 		}
 
 	}
-
+	
 	public static void readFile(String FILENAME) {
 		ArrayList<String> arrList = new ArrayList<>();
 		String[] words = null;
 
-		try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
+		try (BufferedReader br1 = new BufferedReader(new FileReader(FILENAME))) {
 
 			String sCurrentLine;
 
-			while ((sCurrentLine = br.readLine()) != null) {
+			while ((sCurrentLine = br1.readLine()) != null) {
 				arrList.add(sCurrentLine);
 			}
 			words = tokenizer(arrList);
@@ -129,7 +130,7 @@ public class Main {
 		// OLUÞTURUYORUZ.
 		SenticNetSingleton aslýndaNesne = SenticNetSingleton.getInstance();
 
-		FileInputStream FS = new FileInputStream("C:\\Users\\MONSTER\\Desktop\\Sentic.txt");
+		FileInputStream FS = new FileInputStream("src/main/resources/Sentic.txt");
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(FS));
 		String Satir = br.readLine();

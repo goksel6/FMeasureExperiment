@@ -21,7 +21,7 @@ public class MainTest {
 		POSTaggerME tagger = new POSTaggerME(model);
 
 		String sent[] = new String[] { "Most", "large", "cities", " ", "the", "US", "had", "morning", "and",
-				"afternoon", "newspapers", ".",null,null };
+				"afternoon", "newspapers", "." };
 		String tags[] = tagger.tag(sent);
 
 		for (int i = 0; i < tags.length; i++) {
@@ -32,5 +32,15 @@ public class MainTest {
 		assertEquals(12, tags.length);
 
 	}
+	
+//	@Test
+//	public void JJTest() throws Exception {
+//
+//
+//		String sent[] = new String[] { "JJ", "JJ", "JJ"};
+//
+//		assertEquals("JJ", sent[0]);
+//
+//	}
 
 }
